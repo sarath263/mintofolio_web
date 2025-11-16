@@ -13,8 +13,8 @@ export async function fetchIt(url, options = {}) {
     // timeout support
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
-
-    const response = await fetch(baseUrl+url, {
+    const endUrl = url.startsWith("http") ? url : `${baseUrl}${url}`;
+    const response = await fetch(endUrl, {
       method,
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +84,7 @@ export const uploadImage = async (file) => {
 // Utility function to get image by filename
 export const getImageByFilename = async (filename) => {
   try {
-    const response = await fetch(`/api/get/${encodeURIComponent(filename)}`, {
+    const response = await fetch(baseUrl+`/getIm/${encodeURIComponent(filename)}`, {
       method: 'GET',
     });
     
