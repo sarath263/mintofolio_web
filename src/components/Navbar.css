@@ -1,0 +1,185 @@
+/* Navbar Component Styles */
+
+.navbar-logo {
+  object-fit: contain;
+}
+
+/* Mintofolio text styling with premium font */
+.mintofolio-text {
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.dark .mintofolio-text {
+  background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-accent-secondary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px var(--shadow-dark);
+}
+
+/* Hover effect for Mintofolio text */
+.mintofolio-text:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Logo and text alignment */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Ensure logo maintains aspect ratio */
+.navbar-logo {
+  flex-shrink: 0;
+  height: 2.25rem; /* h-9 */
+  width: auto;
+}
+
+/* Mobile optimization - hide text completely on very small screens */
+@media (max-width: 480px) {
+  .mintofolio-text {
+    display: none;
+  }
+  
+  .navbar-brand {
+    gap: 0.5rem;
+  }
+}
+
+/* Responsive navbar improvements */
+@media (max-width: 640px) {
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .navbar > div {
+    gap: 0.5rem;
+  }
+}
+
+/* Smooth transitions for all navbar elements */
+.navbar * {
+  transition: all 0.2s ease;
+}
+
+/* Performance optimizations */
+.navbar {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize icon rendering */
+.navbar-icon {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Icon button styling for mobile */
+.navbar-icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.navbar-icon-button:hover {
+  background-color: var(--overlay-light);
+}
+
+.dark .navbar-icon-button:hover {
+  background-color: var(--overlay-white);
+}
+
+/* Upload button responsive adjustments */
+.upload-button-mobile {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.upload-button-desktop {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Ensure proper icon sizing */
+.navbar-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Prevent text overlap on very small screens */
+@media (max-width: 480px) {
+  .navbar {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .navbar > div {
+    gap: 0.25rem;
+  }
+}
+
+/* Smooth hover effects */
+.navbar a:hover,
+.navbar button:hover {
+  transform: translateY(-1px);
+}
+
+/* Active state styling */
+.navbar a.active {
+  color: var(--pink-600);
+}
+
+.dark .navbar a.active {
+  color: var(--pink-500);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Disabled state styling */
+.navbar button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Navigation loading indicator */
+.navbar-loading {
+  position: relative;
+}
+
+.navbar-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-white);
+  border-radius: inherit;
+  pointer-events: none;
+}

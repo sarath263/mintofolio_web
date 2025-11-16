@@ -1,0 +1,66 @@
+/* Profile Page Styles */
+
+/* Mobile background gradient overlay */
+.profile-mobile-overlay {
+  background: linear-gradient(to bottom, var(--profile-overlay-start) 40%, var(--profile-overlay-end) 100%);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+/* Profile stats styling */
+.profile-stats-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.profile-stats-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+/* Action button styling */
+.profile-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.profile-action-button svg {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-top: -0.25rem;
+}
+
+/* Popular photo styling */
+.popular-photo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow-100);
+}
+
+.popular-photo-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: linear-gradient(to right, var(--yellow-300), var(--pink-500));
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 var(--profile-badge-shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.popular-photo-badge svg {
+  width: 1rem;
+  height: 1rem;
+}

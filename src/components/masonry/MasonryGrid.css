@@ -1,0 +1,57 @@
+/* MasonryGrid Component Styles */
+
+.masonry-grid {
+  min-height: 60vh;
+  box-sizing: border-box;
+  padding-bottom: 2.5rem;
+}
+
+.masonry-grid-item {
+  background: transparent;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.masonry-grid-item-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.masonry-grid-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 120px;
+}
+
+/* Dynamic styles that need to be applied via CSS custom properties */
+.masonry-grid-item[data-opacity="1"] {
+  opacity: 1;
+}
+
+.masonry-grid-item[data-opacity="0.5"] {
+  opacity: 0.5;
+}
+
+.masonry-grid-image[data-opacity="1"] {
+  opacity: 1;
+}
+
+.masonry-grid-image[data-opacity="0"] {
+  opacity: 0;
+}
+
+/* Responsive aspect ratio classes */
+.masonry-grid-item.landscape {
+  aspect-ratio: 4/3;
+}
+
+.masonry-grid-item.portrait {
+  aspect-ratio: 3/4;
+}
+
+.masonry-grid-item.square {
+  aspect-ratio: 1/1;
+}

@@ -1,0 +1,33 @@
+/* Discover Page Styles */
+
+/* Color grade buttons */
+.color-grade-button {
+  background: var(--color-value);
+}
+
+/* Spotlight search modal */
+.spotlight-modal {
+  box-shadow: 0 8px 40px 0 var(--shadow-medium);
+  min-width: 340px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spotlight-input {
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+/* Keyboard shortcut styling */
+.keyboard-shortcut {
+  background-color: var(--gray-200);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.dark .keyboard-shortcut {
+  background-color: var(--gray-600);
+  color: var(--gray-200);
+}
