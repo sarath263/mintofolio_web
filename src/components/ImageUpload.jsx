@@ -18,7 +18,7 @@ export default function ImageUpload() {
       setSelectedFile(file);
       setError(null);
       setUploadResult(null);
-      
+
       // Preview the file
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -44,8 +44,8 @@ export default function ImageUpload() {
 
       // Optionally process with WASM
       if (result.data?.base64_data) {
-        
-        console.log('result:',result.data?.base64_data);
+
+        console.log('result:', result.data?.base64_data);
       }
 
     } catch (err) {
@@ -80,7 +80,7 @@ export default function ImageUpload() {
           {/* File Input */}
           <div>
             <label htmlFor="image-upload" className="block text-sm font-medium mb-2">
-              Select Image File
+              Select File : Images and pdfs are supported.
             </label>
             <input
               id="image-upload"
@@ -95,9 +95,9 @@ export default function ImageUpload() {
           {base64Preview && (
             <div>
               <label className="block text-sm font-medium mb-2">Preview:</label>
-              <img 
-                src={base64Preview} 
-                alt="Preview" 
+              <img
+                src={base64Preview}
+                alt="Preview"
                 className="max-w-full h-auto max-h-64 rounded-md border"
               />
             </div>
@@ -105,12 +105,12 @@ export default function ImageUpload() {
 
           {/* Action Buttons */}
           <div className="flex gap-3">
-            
-            <Button 
+
+            <Button
               onClick={handleUpload}
               disabled={!selectedFile || uploading}
             >
-              {uploading ? 'Uploading...' : 'Upload to API'}
+              {uploading ? 'Uploading...' : 'Add '}
             </Button>
           </div>
 

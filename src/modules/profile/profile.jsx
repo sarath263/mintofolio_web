@@ -6,6 +6,7 @@ import { Card } from "../../components/ui/card";
 import MasonryGrid, { ENABLE_MASONRY_GRID } from "../../components/masonry/MasonryGrid";
 import { fetchPexelsImages } from "../../lib/pexels";
 import { ImageCanvas}  from "../../lib/pkg/index.jsx";
+import Navbar from "../../components/Navbar";
 import "./profile.css";
 
 export default function ProfilePage() {
@@ -24,7 +25,8 @@ export default function ProfilePage() {
   const [openIdx, setOpenIdx] = useState(null);
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center ">
+    <div className="relative min-h-screen w-full flex flex-col items-center pt-16">
+      <Navbar />
       {/* Profile Card - Dribbble style */}
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-6 sm:gap-8 mb-10 z-10 items-center md:items-start pt-4 sm:pt-8 px-2 sm:px-4 relative">
         {/* Mobile: Popular image as background cover */}

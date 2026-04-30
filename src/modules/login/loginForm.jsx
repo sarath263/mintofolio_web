@@ -35,7 +35,7 @@ export default function LoginForm({
       if (response.ok) {
         const request = window.indexedDB.open("MyTestDatabase", 3);
         console.log('API Success:', request);
-        navigate('/upload');
+        navigate('/discover');
         // TODO: Handle successful login on the frontend (e.g., redirect, show message)
       } else {
         console.error('API Error:', response);

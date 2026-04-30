@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import MasonryGrid, { ENABLE_MASONRY_GRID } from "../../components/masonry/MasonryGrid";
 import { fetchPexelsImages } from "../../lib/pexels";
 import { Avatar, AvatarImage } from "../../components/ui/avatar";
+import Navbar from "../../components/Navbar";
 import "./discover.css";
 
 export default function DiscoverPage() {
@@ -45,7 +46,9 @@ export default function DiscoverPage() {
   }, [search]);
 
   return (
-    <div className="max-w-7xl mx-auto w-full px-2 sm:px-4 pt-8">
+    <>
+      <Navbar />
+      <div className="max-w-7xl mx-auto w-full px-2 sm:px-4 pt-24">
       <h1 className="text-3xl font-extrabold mb-2 tracking-tight text-gray-900 dark:text-gray-100">Discover the world through photos</h1>
       <div className="flex flex-wrap gap-3 mb-6">
         {['Recommended for you','12 hours ago','Taken Today','This week','Sunsets','Portraits','Mountains','Rivers','Lake','Beaches','City Lights','Forests','Flowers','Street','Food','Chinatown','Temples','Night Sky','Waterfalls'].map(tag => (
@@ -158,5 +161,6 @@ export default function DiscoverPage() {
         </div>
       )}
     </div>
+    </>
   );
 }
