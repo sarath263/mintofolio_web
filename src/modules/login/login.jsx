@@ -21,7 +21,7 @@ export default function LoginPage() {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % backgroundImages.length
       );
-    }, 2000); // Changed to 2000ms (2 seconds) for smoother transition
+    }, 10000); // Changed to 2000ms (2 seconds) for smoother transition
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, []);
@@ -42,16 +42,15 @@ export default function LoginPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.7 }}
             className="absolute inset-0"
           >
             <Image
               src={backgroundImages[currentImageIndex]}
-              alt={`Login background image ${
-                currentImageIndex + 1
-              }`}
+              alt={`Login background image ${currentImageIndex + 1
+                }`}
               fill
-              className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale login-background-image"
+              className="h-full w-full object-cover dark:brightness-[0.2]  login-background-image"
               priority={currentImageIndex === 0} // Prioritize loading the first image
             />
           </motion.div>
