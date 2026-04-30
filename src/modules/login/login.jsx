@@ -27,7 +27,7 @@ export default function LoginPage() {
   }, []);
 
   return (
-    <div className="grid min-h-svh lg:grid-cols-2">
+    <div className="grid min-h-svh lg:grid-cols-1">
       <div className="flex flex-col gap-4 p-6 md:p-2">
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">
@@ -35,7 +35,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <div className="bg-muted relative hidden lg:block overflow-hidden">
+      <div className="bg-muted fixed full-screen -z-[1] block overflow-hidden">
         <AnimatePresence initial={true}>
           <motion.div
             key={currentImageIndex}

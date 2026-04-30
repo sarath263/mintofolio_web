@@ -56,10 +56,10 @@ export default function LoginForm({
           height={48} // Adjust size as needed
           className="rounded-md"
         />
-        <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100 mintofolio-text">Mintofolio</h1>
+        <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100 mintofolio-text chiron-goround">Mintofolio</h1>
       </div>
       <div className="grid gap-6">
-        
+
         <GoogleLogin
           onSuccess={login}
           onError={() => {
