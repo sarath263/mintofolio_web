@@ -10,6 +10,10 @@ export const router = createBrowserRouter([
     element: <App />,
   },
   {
+    path: "/login",
+    element: <App />,
+  },
+  {
     path: "/upload",
     element: <UploadPage />,
   },
