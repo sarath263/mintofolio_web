@@ -53,3 +53,10 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+.zoomAndFix {
+  width: 200%;
+  /* height: 600px; */
+  transform: scale(0.50);
+  transform-origin: 0 0;
+}

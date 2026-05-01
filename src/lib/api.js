@@ -1,5 +1,5 @@
 // http.js
-const baseUrl="http://localhost:3000";
+const baseUrl = "http://140.238.250.82:3000";
 export async function fetchIt(url, options = {}) {
   try {
     const {
@@ -63,16 +63,16 @@ export const uploadImage = async (file) => {
   try {
     const formData = new FormData();
     formData.append('image', file);
-    
+
     const response = await fetch('/api/upload', {
       method: 'POST',
       body: formData,
     });
-    
+
     if (!response.ok) {
       throw new Error(`Upload failed: ${response.statusText}`);
     }
-    
+
     const result = await response.json();
     return result;
   } catch (error) {
@@ -84,14 +84,14 @@ export const uploadImage = async (file) => {
 // Utility function to get image by filename
 export const getImageByFilename = async (filename) => {
   try {
-    const response = await fetch(baseUrl+`/getIm/${encodeURIComponent(filename)}`, {
+    const response = await fetch(baseUrl + `/getIm/${encodeURIComponent(filename)}`, {
       method: 'GET',
     });
-    
+
     if (!response.ok) {
       throw new Error(`Failed to retrieve image: ${response.statusText}`);
     }
-    
+
     const result = await response.json();
     return result;
   } catch (error) {

@@ -1,7 +1,7 @@
 import { cn } from "../../lib/utils"
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { fetchIt } from "../../lib/api";
 
 export default function LoginForm({

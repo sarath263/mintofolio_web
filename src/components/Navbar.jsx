@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { useEffect, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
-import { Upload, User, LogOut, Search } from "lucide-react";
+import { Upload, User, Search } from "lucide-react";
+import NavMenu from "./NavMenu";
 import "./Navbar.css";
 
 export default function Navbar({ profile }) {
@@ -38,7 +38,7 @@ export default function Navbar({ profile }) {
         </Link>
       </div>
       <div className="flex items-center gap-2 sm:gap-3">
-        <ThemeToggle />
+
         <Link to="/upload" className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-3 sm:px-4 py-2 rounded-full font-bold shadow hover:scale-105 transition text-sm flex items-center gap-2">
           <Upload className="w-4 h-4 sm:hidden" />
           <span className="hidden sm:inline">Add</span>
@@ -49,25 +49,7 @@ export default function Navbar({ profile }) {
         <Link to="/profile" className="sm:hidden navbar-icon-button text-gray-700 dark:text-gray-300 hover:text-pink-600">
           <User className="navbar-icon" />
         </Link>
-        <button
-          onClick={handleLogout}
-          className="hidden sm:block ml-2 text-gray-600 dark:text-gray-400 hover:text-red-500 font-semibold text-sm transition"
-          disabled={isNavigating}
-        >
-          {isNavigating ? 'Logging out...' : 'Log out'}
-        </button>
-        <button
-          onClick={handleLogout}
-          className="sm:hidden navbar-icon-button text-gray-600 dark:text-gray-400 hover:text-red-500"
-          title="Log out"
-          disabled={isNavigating}
-        >
-          {isNavigating ? (
-            <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
-          ) : (
-            <LogOut className="navbar-icon" />
-          )}
-        </button>
+        <NavMenu handleLogout={handleLogout} isNavigating={isNavigating} />
       </div>
     </nav>
   );
