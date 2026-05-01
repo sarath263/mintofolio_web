@@ -33,6 +33,11 @@ export default function LoginForm({
       // const result = await response.json();
 
       if (response.ok) {
+        // Save session in cookie for 7 days
+        const expires = new Date();
+        expires.setDate(expires.getDate() + 7);
+        document.cookie = `session_token=${decoded.sub}; expires=${expires.toUTCString()}; path=/`;
+
         const request = window.indexedDB.open("MyTestDatabase", 3);
         console.log('API Success:', request);
         navigate('/discover');
@@ -56,7 +61,7 @@ export default function LoginForm({
           height={48} // Adjust size as needed
           className="rounded-md"
         />
-        <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100 mintofolio-text chiron-goround">Mintofolio</h1>
+        <h1 className="text-xl font-bold  mintofolio-text chiron-goround">Mintofolio</h1>
       </div>
       <div className="grid gap-6">
 

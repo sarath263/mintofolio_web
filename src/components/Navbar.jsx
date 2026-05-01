@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { useEffect, useState } from "react";
-import { Upload, User, Search } from "lucide-react";
+import { Upload, User, Search, Birdhouse } from "lucide-react";
 import NavMenu from "./NavMenu";
 import "./Navbar.css";
 
@@ -15,6 +15,7 @@ export default function Navbar({ profile }) {
   const handleLogout = () => {
     setIsNavigating(true);
     localStorage.removeItem("google_profile");
+    document.cookie = "session_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     navigate("/login");
   };
 
@@ -26,16 +27,18 @@ export default function Navbar({ profile }) {
   return (
     <nav className="navbar w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b border-gray-100 dark:border-gray-800 shadow-sm fixed top-0 left-0 z-50 flex items-center justify-between px-4 sm:px-8 h-16">
       <div className="flex items-center gap-4">
-        <Link to="/discover" className="navbar-brand group">
+        <Link to="/" className="navbar-brand group">
           <img src="/skolens-logo.png" alt="Mintofolio Logo" className="navbar-logo" />
           <span className="hidden sm:block mintofolio-text">Mintofolio</span>
         </Link>
         <Link to="/discover" className="hidden sm:block text-base font-semibold text-gray-700 dark:text-gray-300 hover:text-pink-600 transition">
-          Discover
+          <Birdhouse />
         </Link>
         <Link to="/discover" className="sm:hidden navbar-icon-button text-gray-700 dark:text-gray-300 hover:text-pink-600">
           <Search className="navbar-icon" />
         </Link>
+
+        <h4 className=" tracking-tight text-gray-900 dark:text-gray-100">Discover</h4>
       </div>
       <div className="flex items-center gap-2 sm:gap-3">
 

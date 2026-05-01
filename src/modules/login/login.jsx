@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { Image } from "../../lib/Image";
+import { useNavigate } from "react-router-dom";
 
 import LoginForm from "./loginForm";
 import "./login.css";
@@ -15,8 +16,14 @@ const backgroundImages = [
 
 export default function LoginPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Auto-login if session cookie exists
+    if (document.cookie.includes("session_token=")) {
+      navigate('/discover');
+    }
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % backgroundImages.length
@@ -36,6 +43,7 @@ export default function LoginPage() {
         </div>
       </div>
       <div className="bg-muted fixed full-screen -z-[1] block overflow-hidden">
+        {/* <div className="full-overlay"></div> */}
         <AnimatePresence initial={true}>
           <motion.div
             key={currentImageIndex}

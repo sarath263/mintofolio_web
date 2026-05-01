@@ -6,21 +6,19 @@
 
 /* Mintofolio text styling with premium font */
 .mintofolio-text {
-  font-family: var(--font-playfair), serif;
-  font-weight: 700;
+  font-weight: 100;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 4px var(--shadow-light);
+  color: white;
 }
 
 .dark .mintofolio-text {
   background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-accent-secondary) 100%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 4px var(--shadow-dark);
 }
 
@@ -40,16 +38,14 @@
 /* Ensure logo maintains aspect ratio */
 .navbar-logo {
   flex-shrink: 0;
-  height: 2.25rem; /* h-9 */
+  height: 2.25rem;
+  /* h-9 */
   width: auto;
 }
 
 /* Mobile optimization - hide text completely on very small screens */
 @media (max-width: 480px) {
-  .mintofolio-text {
-    display: none;
-  }
-  
+
   .navbar-brand {
     gap: 0.5rem;
   }
@@ -61,9 +57,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   /* Ensure proper spacing on mobile */
-  .navbar > div {
+  .navbar>div {
     gap: 0.5rem;
   }
 }
@@ -128,8 +124,8 @@
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
-  
-  .navbar > div {
+
+  .navbar>div {
     gap: 0.25rem;
   }
 }

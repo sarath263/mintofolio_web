@@ -39,7 +39,7 @@ export default function DiscoverPage() {
 
   useEffect(() => {
     setLoadingImages(true);
-    fetchPexelsImages({ perPage: 40, query: search || "travel, world, people, city, food, nature, adventure, product, topic" })
+    fetchPexelsImages({ perPage: 40, query: search || "travel, world, landscapes, city, food, nature, adventure" })
       .then(setImages)
       .catch(() => setImages([]))
       .finally(() => setLoadingImages(false));
@@ -49,7 +49,6 @@ export default function DiscoverPage() {
     <>
       <Navbar />
       <div className="max-w-7xl mx-auto w-full px-2 sm:px-4 pt-24">
-        <h1 className="text-3xl font-extrabold mb-2 tracking-tight text-gray-900 dark:text-gray-100">Discover the world through photos</h1>
         {/* <div className="flex flex-wrap gap-3 mb-6">
         {['Recommended for you','12 hours ago','Taken Today','This week','Sunsets','Portraits','Mountains','Rivers','Lake','Beaches','City Lights','Forests','Flowers','Street','Food','Chinatown','Temples','Night Sky','Waterfalls'].map(tag => (
           <button key={tag} onClick={()=>setSearch(tag.toLowerCase())} className="px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-pink-100 dark:hover:bg-pink-900/30 text-gray-700 dark:text-gray-300 font-semibold text-sm transition">{tag}</button>
